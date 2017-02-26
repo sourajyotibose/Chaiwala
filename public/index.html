@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chaiwalaApp">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chaiwala</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="home-page/home-page.module.js"></script>
+    <script src="home-page/home-page.component.js"></script>
+    <script src="footer-element/footer-element.module.js"></script>
+    <script src="footer-element/footer-element.component.js"></script>
+    <script src="chai-element/chai-element.module.js"></script>
+    <script src="chai-element/chai-element.component.js"></script>
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div layout="column" class="view-container">
+      <div>
+        <home-page></home-page>
+      </div>
+      <div style="position:relative">
+        <div ng-view class="view-frame"></div>
+      </div>
+      <div>
+        <foot-page></foot-page>
+      </div>
+    </div>
+  </body>
+</html>
