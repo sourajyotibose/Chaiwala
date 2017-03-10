@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html ng-app="chaiwalaApp">
+<head>
+  <title>Chaiwala Pictures</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/app.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular-route/angular-route.min.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  <script src="home-page/home-page.module.js"></script>
+  <script src="home-page/home-page.component.js"></script>
+  <script src="footer-element/footer-element.module.js"></script>
+  <script src="footer-element/footer-element.component.js"></script>
+  <script src="chai-element/chai-element.module.js"></script>
+  <script src="chai-element/chai-element.component.js"></script>
+  <script src="chini-element/chini-element.module.js"></script>
+  <script src="chini-element/chini-element.component.js"></script>
+  <script src="doodh-element/doodh-element.module.js"></script>
+  <script src="doodh-element/doodh-element.component.js"></script>
+  <script src="adrak-element/adrak-element.module.js"></script>
+  <script src="adrak-element/adrak-element.component.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <home-page></home-page>
+  <chai-element></chai-element>
+  <chini-element></chini-element>
+  <doodh-element></doodh-element>
+  <adrak-element></adrak-element>
+  <foot-page></foot-page>
+  <script>
+      /* =============================================================
+* bootstrap-scrollspy.js v2.0.1
+* http://twitter.github.com/bootstrap/javascript.html#scrollspy
+* =============================================================
+* Copyright 2012 Twitter, Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+* ============================================================== */
+
+!function ( $ ) {
+
+"use strict"
+
+/* SCROLLSPY CLASS DEFINITION
+ * ========================== */
+
+function ScrollSpy( element, options) {
+  var process = $.proxy(this.process, this)
+    , $element = $(element).is('body') ? $(window) : $(element)
+    , href
+  this.options = $.extend({}, $.fn.scrollspy.defaults, options)
+  this.$scrollElement = $element.on('scroll.scroll.data-api', process)
+  this.selector = (this.options.target
+    || ((href = $(element).attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
+    || '') + ' .nav li > a'
+  this.$body = $('body').on('click.scroll.data-api', this.selector, process)
+  this.refresh()
+  this.process()
+}
+
+ScrollSpy.prototype = {
+
+    constructor: ScrollSpy
+
+  , refresh: function () {
+      this.targets = this.$body
+        .find(this.selector)
+        .map(function () {
+          var href = $(this).attr('href')
+          return /^#\w/.test(href) && $(href).length ? href : null
+        })
+
+      this.offsets = $.map(this.targets, function (id) {
+        return $(id).position().left
+      })
+    }
+
+  , process: function () {
+      var scrollLeft = this.$scrollElement.scrollLeft() + this.options.offset
+        , offsets = this.offsets
+        , targets = this.targets
+        , activeTarget = this.activeTarget
+        , i
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollLeft >= offsets[i]
+          && (!offsets[i + 1] || scrollLeft <= offsets[i + 1])
+          && this.activate( targets[i] )
+      }
+    }
+
+  , activate: function (target) {
+      var active
+
+      this.activeTarget = target
+
+      this.$body
+        .find(this.selector).parent('.active')
+        .removeClass('active')
+
+      active = this.$body
+        .find(this.selector + '[href="' + target + '"]')
+        .parent('li')
+        .addClass('active')
+
+      if ( active.parent('.dropdown-menu') )  {
+        active.closest('li.dropdown').addClass('active')
+      }
+    }
+
+}
+
+
+/* SCROLLSPY PLUGIN DEFINITION
+* =========================== */
+
+$.fn.scrollspy = function ( option ) {
+  return this.each(function () {
+    var $this = $(this)
+      , data = $this.data('scrollspy')
+      , options = typeof option == 'object' && option
+    if (!data) $this.data('scrollspy', (data = new ScrollSpy(this, options)))
+    if (typeof option == 'string') data[option]()
+  })
+}
+
+$.fn.scrollspy.Constructor = ScrollSpy
+
+$.fn.scrollspy.defaults = {
+  offset: 10
+}
+
+
+/* SCROLLSPY DATA-API
+* ================== */
+
+$(function () {
+  $('[data-spy="scroll"]').each(function () {
+    var $spy = $(this)
+    $spy.scrollspy($spy.data())
+  })
+})
+
+  }( window.jQuery );
+
+  </script>
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "chaiwalpictures",
+  "version": "1.0.0",
+  "description": "chaiwala pictures",
+  "main": "index.js",
+  "scripts": {
+    "test": "node"
+  },
+  "author": "Abdullah Sourajyoti Rahil",
+  "license": "ISC"
+}

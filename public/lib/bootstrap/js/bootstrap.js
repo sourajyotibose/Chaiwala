@@ -1907,7 +1907,7 @@ if (typeof jQuery === 'undefined') {
     this.offsets        = []
     this.targets        = []
     this.activeTarget   = null
-    this.scrollHeight   = 0
+    this.scrollWidth   = 0
 
     this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
     this.refresh()
@@ -1920,8 +1920,8 @@ if (typeof jQuery === 'undefined') {
     offset: 10
   }
 
-  ScrollSpy.prototype.getScrollHeight = function () {
-    return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+  ScrollSpy.prototype.getScrollWidth = function () {
+    return this.$scrollElement[0].scrollWidth || Math.max(this.$body[0].scrollWidth, document.documentElement.scrollWidth)
   }
 
   ScrollSpy.prototype.refresh = function () {
@@ -1931,11 +1931,11 @@ if (typeof jQuery === 'undefined') {
 
     this.offsets      = []
     this.targets      = []
-    this.scrollHeight = this.getScrollHeight()
+    this.scrollWidth = this.getScrollWidth()
 
     if (!$.isWindow(this.$scrollElement[0])) {
       offsetMethod = 'position'
-      offsetBase   = this.$scrollElement.scrollTop()
+      offsetBase   = this.$scrollElement.scrollLeft()
     }
 
     this.$body
@@ -1958,31 +1958,31 @@ if (typeof jQuery === 'undefined') {
   }
 
   ScrollSpy.prototype.process = function () {
-    var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
-    var scrollHeight = this.getScrollHeight()
-    var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+    var scrollLeft    = this.$scrollElement.scrollLeft() + this.options.offset
+    var scrollWidth = this.getScrollWidth()
+    var maxScroll    = this.options.offset + scrollWidth - this.$scrollElement.width()
     var offsets      = this.offsets
     var targets      = this.targets
     var activeTarget = this.activeTarget
     var i
 
-    if (this.scrollHeight != scrollHeight) {
+    if (this.scrollWidth != scrollWidth) {
       this.refresh()
     }
 
-    if (scrollTop >= maxScroll) {
+    if (scrollLeft >= maxScroll) {
       return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
     }
 
-    if (activeTarget && scrollTop < offsets[0]) {
+    if (activeTarget && scrollLeft < offsets[0]) {
       this.activeTarget = null
       return this.clear()
     }
 
     for (i = offsets.length; i--;) {
       activeTarget != targets[i]
-        && scrollTop >= offsets[i]
-        && (offsets[i + 1] === undefined || scrollTop < offsets[i + 1])
+        && scrollLeft >= offsets[i]
+        && (offsets[i + 1] === undefined || scrollLeft < offsets[i + 1])
         && this.activate(targets[i])
     }
   }

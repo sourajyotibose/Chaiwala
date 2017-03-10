@@ -4,5 +4,8 @@ angular.module('chaiwalaApp',[
   'ngRoute',
   'homePage',
   'footPage',
-  'chaiElement'
+  'chaiElement',
+  'chiniElement',
+  'doodhElement',
+  'adrakElement'
 ]);
