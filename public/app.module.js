@@ -2,10 +2,13 @@
 
 angular.module('chaiwalaApp',[
   'ngRoute',
+  'ngMaterial',
   'homePage',
   'footPage',
   'chaiElement',
-  'chiniElement',
+  'shakkarElement',
+  'paniElement',
   'doodhElement',
-  'adrakElement'
+  'adrakElement',
+  'thelaElement'
 ]);

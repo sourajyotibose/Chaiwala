@@ -1,9 +1,15 @@
 body {
     position: relative;
-    width: 500vw;
 }
-#item1 {padding-top:50px;height:600px;color: #fff; background-color: #1E88E5; width: 97vw; float: left;}
-#item2 {padding-top:50px;height:600px;color: #fff; background-color: #673ab7; width: 97vw; float: left;}
-#item3 {padding-top:50px;height:600px;color: #fff; background-color: #ff9800; width: 97vw; float: left;}
-#item4 {padding-top:50px;height:600px;color: #fff; background-color: #00bcd4; width: 97vw; float: left;}
-#item5 {padding-top:50px;height:600px;color: #fff; background-color: #009688; width: 97vw; float: left;}
+
+#thela {padding-top:50px;height:600px;color: #fff;background-color: #42392C;}
+#chaipatti {padding-top:50px;height:600px;color: #fff; background-color: #42392C;}
+#shakkar {padding-top:50px;height:600px;color: #fff;background-color: #42392C;}
+#doodh {padding-top:50px;height:600px;color: #fff;background-color: #42392C;}
+#paani {padding-top:50px;height:600px;color: #fff;background-color: #42392C;}
+#adrak {padding-top:50px;height:700px;color: #fff;background-color: #42392C;}
+
+.navbar-nav > li{
+  padding-left:55px;
+  padding-right:55px;
+}

@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('doodhElement',[]);
+angular.module('doodhElement',['ngMaterial']);

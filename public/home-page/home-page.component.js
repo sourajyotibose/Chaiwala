@@ -7,11 +7,12 @@ angular.
     controller: [
       function HomePageController() {
         this.navElements = [
-          {name : 'Item 1', link: 'item1'},
-          {name : 'Item 2', link: 'item2'},
-          {name : 'Item 3', link: 'item3'},
-          {name : 'Item 4', link: 'item4'},
-          {name : 'Item 5', link: 'item5'}
+          {name : 'Thela', link: 'thela', alt: 'Home'},
+          {name : 'ChaiPatti', link: 'chaipatti', alt: 'Item 2'},
+          {name : 'Shakkar', link: 'shakkar', alt: 'Item 3'},
+          {name : 'Doodh', link: 'doodh', alt:'Item 4'},
+          {name : 'Paani', link: 'paani', alt: 'Item 5'},
+          {name : 'Adrak', link: 'adrak', alt: 'Contact'}
         ];
       }
     ]

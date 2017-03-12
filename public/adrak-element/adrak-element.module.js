@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('adrakElement',[]);
+angular.module('adrakElement',['ngMaterial']);

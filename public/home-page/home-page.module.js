@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('homePage',['ngRoute']);
+angular.module('homePage',[]);

@@ -6,8 +6,8 @@ angular.
     templateUrl : 'doodh-element/doodh-element.template.html',
     controller : [
       function DoodhElementController() {
-        this.link = 'item3';
-        this.imageUrl = 'img/chai.jpg';
+        this.link = 'doodh';
+        this.imageUrl = 'img/8.png';
       }
     ]
   });

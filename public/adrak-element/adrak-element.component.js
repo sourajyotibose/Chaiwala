@@ -6,8 +6,8 @@ angular.
     templateUrl : 'adrak-element/adrak-element.template.html',
     controller : [
       function AdrakElementController() {
-        this.link = 'item4';
-        this.imageUrl = 'img/chai.jpg';
+        this.link = 'adrak';
+        this.image = 'img/12.png';
       }
     ]
   });

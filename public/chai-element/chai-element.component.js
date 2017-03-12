@@ -6,8 +6,8 @@ angular.
     templateUrl : 'chai-element/chai-element.template.html',
     controller : [
       function ChaiElementController() {
-        this.link = 'item1';
-        this.imageUrl = 'img/chai.jpg';
+        this.link = 'chaipatti';
+        this.imageUrl = 'img/4.png';
       }
     ]
   });
